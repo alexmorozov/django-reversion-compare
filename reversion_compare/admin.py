@@ -12,7 +12,10 @@
 import logging
 
 from django import template
-from django.conf.urls.defaults import patterns, url
+try:
+    from django.conf.urls.defaults import patterns, url
+except ImportError:
+    from django.conf.urls import patterns, url
 from django.contrib.admin.util import unquote, quote
 from django.core.urlresolvers import reverse
 from django.http import Http404
